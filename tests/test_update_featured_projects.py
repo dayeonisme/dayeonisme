@@ -68,12 +68,12 @@ def test_tech_stack_icons_keep_core_stack_and_add_repo_languages():
 
     icons = tech_stack_icons(languages_by_repo)
 
-    assert icons[:9] == ["py", "sqlite", "flask", "fastapi", "docker", "js", "html", "css", "bash"]
+    assert icons[:10] == ["py", "sqlite", "flask", "fastapi", "docker", "js", "html", "css", "bash", "git"]
     assert "ts" in icons
     assert "go" in icons
     assert "jupyter" in icons
     assert "unknownlang" not in icons
-    assert "git" not in icons
+    assert "git" in icons
     assert "github" not in icons
     assert "githubactions" not in icons
 

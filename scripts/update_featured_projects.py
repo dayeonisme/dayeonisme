@@ -14,8 +14,8 @@ END = "<!-- featured-projects:end -->"
 TECH_STACK_START = "<!-- tech-stack:start -->"
 TECH_STACK_END = "<!-- tech-stack:end -->"
 EXCLUDED_REPOS = {"dayeonisme"}
-EXCLUDED_TECH_STACK = {"git", "github", "githubactions"}
-CORE_TECH_STACK = ["py", "sqlite", "flask", "fastapi", "docker", "js", "html", "css", "bash"]
+EXCLUDED_TECH_STACK = {"github", "githubactions"}
+CORE_TECH_STACK = ["py", "sqlite", "flask", "fastapi", "docker", "js", "html", "css", "bash", "git"]
 
 LANGUAGE_TO_SKILLICON = {
     "Python": "py",
