@@ -14,21 +14,15 @@ Interested in **automation**, **personal app development**, and **data analysis 
 
 ---
 
-### 📊 GitHub Stats
-
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=dayeonisme&theme=tokyonight" width="45%" />
-
----
-
 ### 🚀 Featured Projects
 
 | Project | Description |
 |---|---|
-| [💰 personal-finance](https://github.com/dayeonisme/personal-finance) | Personal finance tracker |
+| [💰 personal-finance](https://github.com/dayeonisme/personal-finance) | Personal finance tracker & dashboard |
 | [🗺 navermap-converter](https://github.com/dayeonisme/navermap-converter) | Naver Map data converter |
 | [🎬 personal-cinelog](https://github.com/dayeonisme/personal-cinelog) | Personal cinema log |
-| [🎱 lottery-pension-auto](https://github.com/dayeonisme/lottery-pension-auto) | Lotto 6/45 & Pension auto-buy |
-| [🔔 pagewatch-ping](https://github.com/dayeonisme/pagewatch-ping) | URL change monitor + Telegram alerts |
+| [🎱 lottery-pension-auto](https://github.com/dayeonisme/lottery-pension-auto) | Lotto 6/45 & Pension auto-buy & report |
+| [🔔 pagewatch-ping](https://github.com/dayeonisme/pagewatch-ping) | URL change monitor & Telegram alerts |
 
 ---
 
