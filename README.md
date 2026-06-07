@@ -10,7 +10,9 @@ Interested in **automation**, **personal app development**, and **data analysis 
 
 ### 🛠 Tech Stack
 
+<!-- tech-stack:start -->
 [![Skillicons](https://skillicons.dev/icons?i=py,sqlite,flask,fastapi,docker,js,html,css,bash,git)](https://skillicons.dev)
+<!-- tech-stack:end -->
 
 ---
 

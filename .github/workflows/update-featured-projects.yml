@@ -1,4 +1,4 @@
-name: Update featured projects
+name: Update profile README
 
 on:
   workflow_dispatch:
@@ -16,11 +16,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Update README featured projects
+      - name: Update README tech stack and featured projects
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/update_featured_projects.py
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "docs: update featured projects"
+          commit_message: "docs: update profile README"
