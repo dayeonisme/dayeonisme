@@ -19,7 +19,7 @@ Interested in **automation**, **personal app development**, and **data analysis 
 <table>
 <tr>
 <td align="center" width="33%"><img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=dayeonisme&theme=tokyonight" width="100%" /></td>
-<td align="center" width="67%"><img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=dayeonisme&theme=tokyonight" width="100%" /></td>
+<td align="center" width="67%"><img src="https://github-readme-activity-graph.vercel.app/graph?username=dayeonisme&theme=tokyo-night&hide_border=true&area=true&hide_title=true" width="100%" /></td>
 </tr>
 </table>
 
