@@ -19,14 +19,14 @@ Building personal tools that make everyday life a little more automated.
 
 ### 📊 GitHub Stats
 
-<img src="https://github-readme-stats.vercel.app/api?username=dayeonisme&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" width="48%" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dayeonisme&layout=compact&theme=tokyonight&hide_border=true" width="40%" />
+<img src="https://github-readme-stats.vercel.app/api?username=dayeonisme&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&cache_seconds=1800" width="48%" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dayeonisme&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=1800" width="40%" />
 
 ---
 
-### 🔥 Streak
+### 📈 Contribution Activity
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=dayeonisme&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=dayeonisme&theme=tokyo-night&hide_border=true&area=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 ---
 
