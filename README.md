@@ -1,6 +1,10 @@
 <div align="center">
 
-**Korea 🇰🇷**
+### Hi, I'm Dayeon 👋
+
+Data Analyst with experience across **e-commerce, healthcare, and manufacturing** industries.
+
+Interested in **automation**, **personal app development**, and **data analysis & visualization**.
 
 ---
 
@@ -12,12 +16,8 @@
 
 ### 📊 GitHub Stats
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=dayeonisme&theme=tokyonight" width="32%" />
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=dayeonisme&theme=tokyonight" width="32%" />
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=dayeonisme&theme=tokyonight" width="32%" />
-
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=dayeonisme&theme=tokyonight" width="65%" />
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=dayeonisme&theme=tokyonight&utcOffset=9" width="32%" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=dayeonisme&theme=tokyonight" width="35%" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=dayeonisme&theme=tokyonight" width="72%" />
 
 ---
 
