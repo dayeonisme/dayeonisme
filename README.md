@@ -19,12 +19,12 @@ Interested in **automation**, **personal app development**, and **data analysis 
 <!-- featured-projects:start -->
 | Project | Description |
 |---|---|
-| [🏠 private-project](https://github.com/dayeonisme/private-project) | Private project |
-| [🎱 lottery-pension-auto](https://github.com/dayeonisme/lottery-pension-auto) | Lotto 6/45 & Pension auto-buy & report |
-| [🗺 navermap-converter](https://github.com/dayeonisme/navermap-converter) | Naver Map data converter |
-| [🔔 pagewatch-ping](https://github.com/dayeonisme/pagewatch-ping) | Local URL change monitor with Telegram alerts |
-| [🎬 personal-cinelog](https://github.com/dayeonisme/personal-cinelog) | Watched movie diary with ratings and reviews |
 | [💰 personal-finance](https://github.com/dayeonisme/personal-finance) | Personal finance tracker & dashboard |
+| [🗺 navermap-converter](https://github.com/dayeonisme/navermap-converter) | Naver Map data converter |
+| [🎬 personal-cinelog](https://github.com/dayeonisme/personal-cinelog) | Watched movie diary with ratings and reviews |
+| [🎱 lottery-pension-auto](https://github.com/dayeonisme/lottery-pension-auto) | Lotto 6/45 & Pension auto-buy & report |
+| [🔔 pagewatch-ping](https://github.com/dayeonisme/pagewatch-ping) | Local URL change monitor with Telegram alerts |
+| [🏠 private-project](https://github.com/dayeonisme/private-project) | Private project |
 <!-- featured-projects:end -->
 
 ---

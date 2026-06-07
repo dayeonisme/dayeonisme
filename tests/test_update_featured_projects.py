@@ -1,7 +1,7 @@
 from scripts.update_featured_projects import project_rows, replace_featured_projects
 
 
-def test_project_rows_include_public_non_profile_repos_sorted_by_name():
+def test_project_rows_include_public_non_profile_repos_sorted_by_created_at():
     repos = [
         {
             "name": "dayeonisme",
@@ -10,6 +10,7 @@ def test_project_rows_include_public_non_profile_repos_sorted_by_name():
             "private": False,
             "fork": False,
             "archived": False,
+            "created_at": "2024-01-01T00:00:00Z",
         },
         {
             "name": "private-project",
@@ -18,6 +19,7 @@ def test_project_rows_include_public_non_profile_repos_sorted_by_name():
             "private": False,
             "fork": False,
             "archived": False,
+            "created_at": "2026-06-07T00:00:00Z",
         },
         {
             "name": "new-tool",
@@ -26,6 +28,7 @@ def test_project_rows_include_public_non_profile_repos_sorted_by_name():
             "private": False,
             "fork": False,
             "archived": False,
+            "created_at": "2023-01-01T00:00:00Z",
         },
         {
             "name": "private-tool",
@@ -34,6 +37,7 @@ def test_project_rows_include_public_non_profile_repos_sorted_by_name():
             "private": True,
             "fork": False,
             "archived": False,
+            "created_at": "2022-01-01T00:00:00Z",
         },
     ]
 
@@ -42,8 +46,8 @@ def test_project_rows_include_public_non_profile_repos_sorted_by_name():
     assert rows == [
         "| Project | Description |",
         "|---|---|",
-        "| [🏠 private-project](https://github.com/dayeonisme/private-project) | Private project |",
         "| [📌 new-tool](https://github.com/dayeonisme/new-tool) | New automation tool |",
+        "| [🏠 private-project](https://github.com/dayeonisme/private-project) | Private project |",
     ]
 
 

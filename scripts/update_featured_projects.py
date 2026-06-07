@@ -34,7 +34,7 @@ DESCRIPTION_OVERRIDES = {
 def fetch_public_repos(owner: str = OWNER) -> list[dict[str, Any]]:
     token = os.environ.get("GITHUB_TOKEN", "")
     request = Request(
-        f"https://api.github.com/users/{owner}/repos?type=owner&sort=updated&per_page=100",
+        f"https://api.github.com/users/{owner}/repos?type=owner&sort=created&direction=asc&per_page=100",
         headers={
             "Accept": "application/vnd.github+json",
             **({"Authorization": f"Bearer {token}"} if token else {}),
@@ -60,7 +60,7 @@ def project_rows(repos: list[dict[str, Any]]) -> list[str]:
         and not repo.get("archived")
         and repo["name"] not in EXCLUDED_REPOS
     ]
-    public_repos.sort(key=lambda repo: repo["name"].lower())
+    public_repos.sort(key=lambda repo: (repo.get("created_at") or "", repo["name"].lower()))
     rows = ["| Project | Description |", "|---|---|"]
     for repo in public_repos:
         name = repo["name"]
