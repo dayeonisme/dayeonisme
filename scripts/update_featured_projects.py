@@ -25,7 +25,7 @@ EMOJI_BY_REPO = {
 DESCRIPTION_OVERRIDES = {
     "personal-finance": "Personal finance tracker & dashboard",
     "navermap-converter": "Naver Map data converter",
-    "personal-cinelog": "Personal cinema log",
+    "personal-cinelog": "Watched movie diary with ratings and reviews",
     "private-project": "Private project",
     "lottery-pension-auto": "Lotto 6/45 & Pension auto-buy & report",
 }

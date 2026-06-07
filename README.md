@@ -23,7 +23,7 @@ Interested in **automation**, **personal app development**, and **data analysis 
 | [🎱 lottery-pension-auto](https://github.com/dayeonisme/lottery-pension-auto) | Lotto 6/45 & Pension auto-buy & report |
 | [🗺 navermap-converter](https://github.com/dayeonisme/navermap-converter) | Naver Map data converter |
 | [🔔 pagewatch-ping](https://github.com/dayeonisme/pagewatch-ping) | Local URL change monitor with Telegram alerts |
-| [🎬 personal-cinelog](https://github.com/dayeonisme/personal-cinelog) | Personal cinema log |
+| [🎬 personal-cinelog](https://github.com/dayeonisme/personal-cinelog) | Watched movie diary with ratings and reviews |
 | [💰 personal-finance](https://github.com/dayeonisme/personal-finance) | Personal finance tracker & dashboard |
 <!-- featured-projects:end -->
 
