@@ -84,6 +84,38 @@ def test_project_emoji_infers_from_repo_content_without_explicit_mapping():
     )
 
 
+def test_project_rows_avoid_duplicate_inferred_emojis_when_possible():
+    repos = [
+        {
+            "name": "first-automation",
+            "html_url": "https://github.com/dayeonisme/first-automation",
+            "description": "Automation workflow tool",
+            "private": False,
+            "fork": False,
+            "archived": False,
+            "created_at": "2023-01-01T00:00:00Z",
+        },
+        {
+            "name": "second-automation",
+            "html_url": "https://github.com/dayeonisme/second-automation",
+            "description": "Automation workflow tool",
+            "private": False,
+            "fork": False,
+            "archived": False,
+            "created_at": "2024-01-01T00:00:00Z",
+        },
+    ]
+
+    rows = project_rows(repos)
+
+    assert rows == [
+        "| Project | Description |",
+        "|---|---|",
+        "| [🤖 first-automation](https://github.com/dayeonisme/first-automation) | Automation workflow tool |",
+        "| [⚙️ second-automation](https://github.com/dayeonisme/second-automation) | Automation workflow tool |",
+    ]
+
+
 def test_replace_featured_projects_only_updates_marked_section():
     readme = "before\n<!-- featured-projects:start -->\nold\n<!-- featured-projects:end -->\nafter"
 

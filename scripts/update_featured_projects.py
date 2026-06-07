@@ -49,16 +49,17 @@ EMOJI_BY_REPO = {
 }
 
 EMOJI_RULES = [
-    ("💰", {"finance", "money", "budget", "expense", "income", "asset", "portfolio"}),
-    ("🗺", {"map", "naver", "location", "geo", "converter"}),
-    ("🎬", {"movie", "cinema", "film", "rating", "ratings", "review", "watched"}),
-    ("🏠", {"home", "housing", "private-project", "subscription", "lh", "real-estate", "apartment"}),
-    ("🎱", {"lottery", "lotto", "pension", "raffle"}),
-    ("🔔", {"alert", "alerts", "watch", "watcher", "monitor", "notification", "telegram", "ping"}),
-    ("📊", {"dashboard", "analytics", "analysis", "visualization", "report", "data"}),
-    ("🤖", {"automation", "auto", "bot", "agent", "workflow", "tool"}),
-    ("🌐", {"web", "site", "frontend", "html", "css"}),
+    (("💰", "📈", "🧾"), {"finance", "money", "budget", "expense", "income", "asset", "portfolio"}),
+    (("🗺", "📍", "🧭"), {"map", "naver", "location", "geo", "converter"}),
+    (("🎬", "⭐", "🍿"), {"movie", "cinema", "film", "rating", "ratings", "review", "watched"}),
+    (("🏠", "🏢", "📋"), {"home", "housing", "private-project", "subscription", "lh", "real-estate", "apartment"}),
+    (("🎱", "🎲", "🍀"), {"lottery", "lotto", "pension", "raffle"}),
+    (("🔔", "📡", "👀"), {"alert", "alerts", "watch", "watcher", "monitor", "notification", "telegram", "ping"}),
+    (("📊", "📉", "📈"), {"dashboard", "analytics", "analysis", "visualization", "report", "data"}),
+    (("🤖", "⚙️", "🛠"), {"automation", "auto", "bot", "agent", "workflow", "tool"}),
+    (("🌐", "🖥", "✨"), {"web", "site", "frontend", "html", "css"}),
 ]
+FALLBACK_EMOJIS = ("📌", "🧩", "✨", "🚀", "🛠")
 
 DESCRIPTION_OVERRIDES = {
     "personal-finance": "Personal finance tracker & dashboard",
@@ -102,26 +103,36 @@ def description_for(repo: dict[str, Any]) -> str:
     return repo.get("description") or name.replace("-", " ").title()
 
 
-def project_emoji(repo: dict[str, Any]) -> str:
+def _first_available(candidates: tuple[str, ...], used_emojis: set[str]) -> str | None:
+    for emoji in candidates:
+        if emoji not in used_emojis:
+            return emoji
+    return None
+
+
+def project_emoji(repo: dict[str, Any], used_emojis: set[str] | None = None) -> str:
+    used_emojis = used_emojis or set()
     name = repo["name"]
-    if name in EMOJI_BY_REPO:
+    if name in EMOJI_BY_REPO and EMOJI_BY_REPO[name] not in used_emojis:
         return EMOJI_BY_REPO[name]
     topics = repo.get("topics") or []
     searchable = " ".join([name, repo.get("description") or "", *topics]).lower()
     tokens = set(searchable.replace("_", "-").replace("/", "-").replace("&", " ").split())
-    for emoji, keywords in EMOJI_RULES:
+    for emoji_candidates, keywords in EMOJI_RULES:
         if any(keyword in searchable or keyword in tokens for keyword in keywords):
-            return emoji
-    return "📌"
+            return _first_available(emoji_candidates, used_emojis) or emoji_candidates[0]
+    return _first_available(FALLBACK_EMOJIS, used_emojis) or FALLBACK_EMOJIS[0]
 
 
 def project_rows(repos: list[dict[str, Any]]) -> list[str]:
     public_repos = public_feature_repos(repos)
     public_repos.sort(key=lambda repo: (repo.get("created_at") or "", repo["name"].lower()))
     rows = ["| Project | Description |", "|---|---|"]
+    used_emojis: set[str] = set()
     for repo in public_repos:
         name = repo["name"]
-        emoji = project_emoji(repo)
+        emoji = project_emoji(repo, used_emojis)
+        used_emojis.add(emoji)
         rows.append(f"| [{emoji} {name}]({repo['html_url']}) | {description_for(repo)} |")
     return rows
 
