@@ -14,7 +14,8 @@ END = "<!-- featured-projects:end -->"
 TECH_STACK_START = "<!-- tech-stack:start -->"
 TECH_STACK_END = "<!-- tech-stack:end -->"
 EXCLUDED_REPOS = {"dayeonisme"}
-CORE_TECH_STACK = ["py", "sqlite", "flask", "fastapi", "docker", "js", "html", "css", "bash", "git"]
+EXCLUDED_TECH_STACK = {"git", "github", "githubactions"}
+CORE_TECH_STACK = ["py", "sqlite", "flask", "fastapi", "docker", "js", "html", "css", "bash"]
 
 LANGUAGE_TO_SKILLICON = {
     "Python": "py",
@@ -112,7 +113,7 @@ def public_feature_repos(repos: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def tech_stack_icons(languages_by_repo: dict[str, dict[str, int]]) -> list[str]:
-    icons = list(CORE_TECH_STACK)
+    icons = [icon for icon in CORE_TECH_STACK if icon not in EXCLUDED_TECH_STACK]
     seen = set(icons)
     languages = sorted(
         {
@@ -124,7 +125,7 @@ def tech_stack_icons(languages_by_repo: dict[str, dict[str, int]]) -> list[str]:
     )
     for language in languages:
         icon = LANGUAGE_TO_SKILLICON.get(language)
-        if icon and icon not in seen:
+        if icon and icon not in seen and icon not in EXCLUDED_TECH_STACK:
             seen.add(icon)
             icons.append(icon)
     return icons
