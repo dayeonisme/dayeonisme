@@ -16,7 +16,7 @@ Interested in **automation**, **personal app development**, and **data analysis 
 
 ### 📊 GitHub Stats
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=dayeonisme&theme=tokyonight" width="27%" /><img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=dayeonisme&theme=tokyonight" width="68%" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=dayeonisme&theme=tokyonight" height="200" /><img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=dayeonisme&theme=tokyonight" height="200" />
 
 ---
 
