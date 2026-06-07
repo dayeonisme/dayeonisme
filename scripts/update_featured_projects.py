@@ -48,6 +48,18 @@ EMOJI_BY_REPO = {
     "pagewatch-ping": "🔔",
 }
 
+EMOJI_RULES = [
+    ("💰", {"finance", "money", "budget", "expense", "income", "asset", "portfolio"}),
+    ("🗺", {"map", "naver", "location", "geo", "converter"}),
+    ("🎬", {"movie", "cinema", "film", "rating", "ratings", "review", "watched"}),
+    ("🏠", {"home", "housing", "private-project", "subscription", "lh", "real-estate", "apartment"}),
+    ("🎱", {"lottery", "lotto", "pension", "raffle"}),
+    ("🔔", {"alert", "alerts", "watch", "watcher", "monitor", "notification", "telegram", "ping"}),
+    ("📊", {"dashboard", "analytics", "analysis", "visualization", "report", "data"}),
+    ("🤖", {"automation", "auto", "bot", "agent", "workflow", "tool"}),
+    ("🌐", {"web", "site", "frontend", "html", "css"}),
+]
+
 DESCRIPTION_OVERRIDES = {
     "personal-finance": "Personal finance tracker & dashboard",
     "navermap-converter": "Naver Map data converter",
@@ -90,13 +102,26 @@ def description_for(repo: dict[str, Any]) -> str:
     return repo.get("description") or name.replace("-", " ").title()
 
 
+def project_emoji(repo: dict[str, Any]) -> str:
+    name = repo["name"]
+    if name in EMOJI_BY_REPO:
+        return EMOJI_BY_REPO[name]
+    topics = repo.get("topics") or []
+    searchable = " ".join([name, repo.get("description") or "", *topics]).lower()
+    tokens = set(searchable.replace("_", "-").replace("/", "-").replace("&", " ").split())
+    for emoji, keywords in EMOJI_RULES:
+        if any(keyword in searchable or keyword in tokens for keyword in keywords):
+            return emoji
+    return "📌"
+
+
 def project_rows(repos: list[dict[str, Any]]) -> list[str]:
     public_repos = public_feature_repos(repos)
     public_repos.sort(key=lambda repo: (repo.get("created_at") or "", repo["name"].lower()))
     rows = ["| Project | Description |", "|---|---|"]
     for repo in public_repos:
         name = repo["name"]
-        emoji = EMOJI_BY_REPO.get(name, "📌")
+        emoji = project_emoji(repo)
         rows.append(f"| [{emoji} {name}]({repo['html_url']}) | {description_for(repo)} |")
     return rows
 

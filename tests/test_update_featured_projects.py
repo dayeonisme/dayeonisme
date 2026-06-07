@@ -1,4 +1,4 @@
-from scripts.update_featured_projects import project_rows, replace_featured_projects, replace_tech_stack, tech_stack_icons
+from scripts.update_featured_projects import project_emoji, project_rows, replace_featured_projects, replace_tech_stack, tech_stack_icons
 
 
 def test_project_rows_include_public_non_profile_repos_sorted_by_created_at():
@@ -46,9 +46,42 @@ def test_project_rows_include_public_non_profile_repos_sorted_by_created_at():
     assert rows == [
         "| Project | Description |",
         "|---|---|",
-        "| [📌 new-tool](https://github.com/dayeonisme/new-tool) | New automation tool |",
+        "| [🤖 new-tool](https://github.com/dayeonisme/new-tool) | New automation tool |",
         "| [🏠 private-project](https://github.com/dayeonisme/private-project) | Private project |",
     ]
+
+
+def test_project_emoji_infers_from_repo_content_without_explicit_mapping():
+    assert (
+        project_emoji(
+            {
+                "name": "movie-ratings",
+                "description": "Watched movie diary with ratings and reviews",
+                "topics": ["film", "review"],
+            }
+        )
+        == "🎬"
+    )
+    assert (
+        project_emoji(
+            {
+                "name": "budget-dashboard",
+                "description": "Personal finance tracker",
+                "topics": ["money"],
+            }
+        )
+        == "💰"
+    )
+    assert (
+        project_emoji(
+            {
+                "name": "unknown-project",
+                "description": "",
+                "topics": [],
+            }
+        )
+        == "📌"
+    )
 
 
 def test_replace_featured_projects_only_updates_marked_section():
