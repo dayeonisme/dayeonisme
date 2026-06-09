@@ -25,7 +25,7 @@ Interested in **automation**, **personal app development**, and **data analysis 
 | [🗺 navermap-converter](https://github.com/dayeonisme/navermap-converter) | Naver Map data converter |
 | [🎬 personal-cinelog](https://github.com/dayeonisme/personal-cinelog) | Watched movie diary with ratings and reviews |
 | [🎱 lottery-pension-auto](https://github.com/dayeonisme/lottery-pension-auto) | Lotto 6/45 & Pension auto-buy & report |
-| [🔔 pagewatch-ping](https://github.com/dayeonisme/pagewatch-ping) | Local URL change monitor with Telegram alerts |
+| [🔔 pagewatch-ping](https://github.com/dayeonisme/pagewatch-ping) | 로컬 URL 변경 감지 및 텔레그램 알림 |
 | [🏠 private-project](https://github.com/dayeonisme/private-project) | Private project |
 <!-- featured-projects:end -->
 
