@@ -1,3 +1,4 @@
+from scripts import update_featured_projects
 from scripts.update_featured_projects import project_emoji, project_rows, replace_featured_projects, replace_tech_stack, tech_stack_icons
 
 
@@ -13,8 +14,8 @@ def test_project_rows_include_public_non_profile_repos_sorted_by_created_at():
             "created_at": "2024-01-01T00:00:00Z",
         },
         {
-            "name": "private-project",
-            "html_url": "https://github.com/dayeonisme/private-project",
+            "name": "pagewatch-ping",
+            "html_url": "https://github.com/dayeonisme/pagewatch-ping",
             "description": None,
             "private": False,
             "fork": False,
@@ -46,8 +47,7 @@ def test_project_rows_include_public_non_profile_repos_sorted_by_created_at():
     assert rows == [
         "| Project | Description |",
         "|---|---|",
-        "| [🤖 new-tool](https://github.com/dayeonisme/new-tool) | New automation tool |",
-        "| [🏠 private-project](https://github.com/dayeonisme/private-project) | Private project |",
+        "| [🔔 pagewatch-ping](https://github.com/dayeonisme/pagewatch-ping) | Pagewatch Ping |",
     ]
 
 
@@ -84,7 +84,9 @@ def test_project_emoji_infers_from_repo_content_without_explicit_mapping():
     )
 
 
-def test_project_rows_avoid_duplicate_inferred_emojis_when_possible():
+def test_project_rows_avoid_duplicate_inferred_emojis_when_possible(monkeypatch):
+    monkeypatch.setattr(update_featured_projects, "FEATURED_REPOS", {"first-automation", "second-automation"})
+
     repos = [
         {
             "name": "first-automation",

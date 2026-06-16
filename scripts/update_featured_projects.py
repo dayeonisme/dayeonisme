@@ -13,7 +13,13 @@ START = "<!-- featured-projects:start -->"
 END = "<!-- featured-projects:end -->"
 TECH_STACK_START = "<!-- tech-stack:start -->"
 TECH_STACK_END = "<!-- tech-stack:end -->"
-EXCLUDED_REPOS = {"dayeonisme"}
+FEATURED_REPOS = {
+    "personal-finance",
+    "navermap-converter",
+    "personal-cinelog",
+    "lottery-pension-auto",
+    "pagewatch-ping",
+}
 EXCLUDED_TECH_STACK = {"github", "githubactions"}
 CORE_TECH_STACK = ["py", "sqlite", "flask", "fastapi", "docker", "js", "html", "css", "bash", "git"]
 
@@ -43,7 +49,6 @@ EMOJI_BY_REPO = {
     "personal-finance": "💰",
     "navermap-converter": "🗺",
     "personal-cinelog": "🎬",
-    "private-project": "🏠",
     "lottery-pension-auto": "🎱",
     "pagewatch-ping": "🔔",
 }
@@ -52,7 +57,6 @@ EMOJI_RULES = [
     (("💰", "📈", "🧾"), {"finance", "money", "budget", "expense", "income", "asset", "portfolio"}),
     (("🗺", "📍", "🧭"), {"map", "naver", "location", "geo", "converter"}),
     (("🎬", "⭐", "🍿"), {"movie", "cinema", "film", "rating", "ratings", "review", "watched"}),
-    (("🏠", "🏢", "📋"), {"home", "housing", "private-project", "subscription", "lh", "real-estate", "apartment"}),
     (("🎱", "🎲", "🍀"), {"lottery", "lotto", "pension", "raffle"}),
     (("🔔", "📡", "👀"), {"alert", "alerts", "watch", "watcher", "monitor", "notification", "telegram", "ping"}),
     (("📊", "📉", "📈"), {"dashboard", "analytics", "analysis", "visualization", "report", "data"}),
@@ -65,7 +69,6 @@ DESCRIPTION_OVERRIDES = {
     "personal-finance": "Personal finance tracker & dashboard",
     "navermap-converter": "Naver Map data converter",
     "personal-cinelog": "Watched movie diary with ratings and reviews",
-    "private-project": "Private project",
     "lottery-pension-auto": "Lotto 6/45 & Pension auto-buy & report",
 }
 
@@ -144,7 +147,7 @@ def public_feature_repos(repos: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if not repo.get("private")
         and not repo.get("fork")
         and not repo.get("archived")
-        and repo["name"] not in EXCLUDED_REPOS
+        and repo["name"] in FEATURED_REPOS
     ]
 
 
