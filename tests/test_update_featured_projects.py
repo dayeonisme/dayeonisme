@@ -45,9 +45,9 @@ def test_project_rows_include_public_non_profile_repos_sorted_by_created_at():
     rows = project_rows(repos)
 
     assert rows == [
-        "| Project | Description |",
+        "| 프로젝트 | 설명 |",
         "|---|---|",
-        "| [🔔 pagewatch-ping](https://github.com/dayeonisme/pagewatch-ping) | Pagewatch Ping |",
+        "| [🔔 pagewatch-ping](https://github.com/dayeonisme/pagewatch-ping) | 로컬 URL 변경 감지 및 텔레그램 알림 |",
     ]
 
 
@@ -111,7 +111,7 @@ def test_project_rows_avoid_duplicate_inferred_emojis_when_possible(monkeypatch)
     rows = project_rows(repos)
 
     assert rows == [
-        "| Project | Description |",
+        "| 프로젝트 | 설명 |",
         "|---|---|",
         "| [🤖 first-automation](https://github.com/dayeonisme/first-automation) | Automation workflow tool |",
         "| [⚙️ second-automation](https://github.com/dayeonisme/second-automation) | Automation workflow tool |",

@@ -66,10 +66,11 @@ EMOJI_RULES = [
 FALLBACK_EMOJIS = ("📌", "🧩", "✨", "🚀", "🛠")
 
 DESCRIPTION_OVERRIDES = {
-    "personal-finance": "Personal finance tracker & dashboard",
-    "navermap-converter": "Naver Map data converter",
-    "personal-cinelog": "Watched movie diary with ratings and reviews",
-    "lottery-pension-auto": "Lotto 6/45 & Pension auto-buy & report",
+    "personal-finance": "개인 금융 내역 수집 및 대시보드",
+    "navermap-converter": "주소 파일을 네이버 지도 리스트로 저장하는 변환 도구",
+    "personal-cinelog": "영화 별점, 리뷰, 보고싶어요 목록 관리 앱",
+    "lottery-pension-auto": "로또 6/45 및 연금복권 자동 구매와 결과 기록",
+    "pagewatch-ping": "로컬 URL 변경 감지 및 텔레그램 알림",
 }
 
 
@@ -130,7 +131,7 @@ def project_emoji(repo: dict[str, Any], used_emojis: set[str] | None = None) -> 
 def project_rows(repos: list[dict[str, Any]]) -> list[str]:
     public_repos = public_feature_repos(repos)
     public_repos.sort(key=lambda repo: (repo.get("created_at") or "", repo["name"].lower()))
-    rows = ["| Project | Description |", "|---|---|"]
+    rows = ["| 프로젝트 | 설명 |", "|---|---|"]
     used_emojis: set[str] = set()
     for repo in public_repos:
         name = repo["name"]
