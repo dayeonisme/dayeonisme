@@ -113,6 +113,12 @@ def public_feature_repos(repos: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def replace_featured_projects(readme: str, rows: list[str]) -> str:
+    for marker in (START, END):
+        if marker not in readme:
+            raise SystemExit(
+                f"{README}에 {marker} 마커가 없습니다. "
+                "마커를 되살리거나 이 스크립트에서 해당 블록 처리를 제거하세요."
+            )
     before, rest = readme.split(START, 1)
     _, after = rest.split(END, 1)
     body = "\n".join([START, *rows, END])
