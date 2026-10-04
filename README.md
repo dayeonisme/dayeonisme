@@ -22,6 +22,6 @@ Interested in **automation**, **personal app development**, and **data analysis 
 
 ---
 
-![Visitor Count](https://komarev.com/ghpvc/?username=dayeonisme&color=blueviolet&style=flat-square)
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=dayeonisme.dayeonisme&left_text=Visitors&right_color=%238a2be2)
 
 </div>
