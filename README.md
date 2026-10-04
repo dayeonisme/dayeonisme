@@ -20,8 +20,4 @@ Interested in **automation**, **personal app development**, and **data analysis 
 | [🔔 pagewatch-ping](https://github.com/dayeonisme/pagewatch-ping) | 로컬 URL 변경 감지 및 텔레그램 알림 |
 <!-- featured-projects:end -->
 
----
-
-![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=dayeonisme.dayeonisme&left_text=Visitors&right_color=%238a2be2)
-
 </div>
